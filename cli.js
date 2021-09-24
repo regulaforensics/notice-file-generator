@@ -1,9 +1,13 @@
 #!/usr/bin/env node
-// const [,, ...args] = process.argv
 const { execSync } = require('child_process')
 const { readFileSync, writeFileSync } = require('fs')
 
 const TMP_FILENAME = `${process.cwd()}/licenses.json`
+const NOTICE_FILENAME = `${process.cwd()}/NOTICE`
+
+try {
+  execSync(`rm ${NOTICE_FILENAME}`, { stdio : 'pipe' })
+} catch (e) {}
 
 execSync(`npx license-checker --production --exclude \'MIT, MIT OR X11, BSD, ISC, Unlicense\' --json > ${TMP_FILENAME}`)
 
@@ -24,6 +28,6 @@ for (const pkg3rd in licenses) {
   notice += `Copyright ${publisher}. All Rights Reserved.\n\n`
 }
 
-writeFileSync(`${process.cwd()}/NOTICE`, notice)
+writeFileSync(NOTICE_FILENAME, notice)
 
 execSync(`rm ${TMP_FILENAME}`)
