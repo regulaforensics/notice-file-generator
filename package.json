@@ -4,8 +4,7 @@
   "description": "Generates NOTICE files for apache-2.0 licenses.",
   "author": "Regula Forensics, Inc.",
   "license": "(MIT OR Apache-2.0)",
-  "version": "1.0.1",
-  "main": "index.js",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/regulaforensics/notice-file-generator.git"
@@ -13,5 +12,11 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "homepage": "https://github.com/regulaforensics/notice-file-generator#readme"
+  "homepage": "https://github.com/regulaforensics/notice-file-generator#readme",
+  "bin": {
+    "generate-notice": "./cli.js"
+  },
+  "dependencies": {
+    "license-checker": "^25.0.1"
+  }
 }
