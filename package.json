@@ -4,7 +4,7 @@
   "description": "Generates NOTICE files for apache-2.0 licenses.",
   "author": "Regula Forensics, Inc.",
   "license": "(MIT OR Apache-2.0)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": {
     "type": "git",
