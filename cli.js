@@ -9,7 +9,7 @@ try {
   execSync(`rm ${NOTICE_FILENAME}`, { stdio : 'pipe' })
 } catch (e) {}
 
-execSync(`npx license-checker --production --exclude \'MIT, MIT OR X11, BSD, ISC, Unlicense\' --json > ${TMP_FILENAME}`)
+execSync(`npx license-checker --exclude \'MIT, MIT OR X11, BSD, ISC, Unlicense\' --json > ${TMP_FILENAME}`)
 
 const licenses = JSON.parse(readFileSync(TMP_FILENAME, 'utf8'));
 const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
