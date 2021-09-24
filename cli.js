@@ -21,6 +21,11 @@ notice += `The Regula (https://regulaforensics.com/).\n\n`
 
 for (const pkg3rd in licenses) {
   const license = licenses[pkg3rd]
+
+  if (!license.publisher) {
+    continue
+  }
+
   const publisher = license.publisher.replace(/\.+$/, '')
 
   notice += `The Initial Developer of the ${pkg3rd} (${license.repository}),\n`
